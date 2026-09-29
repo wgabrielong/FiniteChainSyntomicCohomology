@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: >-
+  If you use these tables, please cite them and the work of Antieau, Krause and Nikolaus on
+  which the computation rests.
+title: "FiniteChainSyntomicCohomology: p-adic K-groups of Z/p^n in degrees up to 100"
+abstract: >-
+  The p-adic K-groups K_r(Z/p^n; Z_p), 1 <= r <= 100, of the 19 rings Z/p^n tabulated in
+  Appendix A of Antieau, Krause and Nikolaus, On the K-theory of Z/p^n, computed with
+  Syntomic.jl, with the groups that are new relative to that appendix marked.
+type: dataset
+authors:
+  - family-names: Ong
+    given-names: Wern Juin Gabriel
+    email: gabriel_ong@ieee.org
+repository-code: "https://github.com/wgabrielong/FiniteChainSyntomicCohomology"
+keywords:
+  - algebraic K-theory
+  - syntomic cohomology
+  - finite chain rings
+references:
+  - type: article
+    title: "On the K-theory of Z/p^n"
+    authors:
+      - family-names: Antieau
+        given-names: Benjamin
+      - family-names: Krause
+        given-names: Achim
+      - family-names: Nikolaus
+        given-names: Thomas
+    identifiers:
+      - type: other
+        value: "arXiv:2405.04329"
+  - type: software
+    title: "Syntomic.jl: syntomic cohomology and K-theory of finite chain rings"
+    authors:
+      - family-names: Ong
+        given-names: Gabriel
+    url: "https://github.com/wgabrielong/Syntomic.jl"

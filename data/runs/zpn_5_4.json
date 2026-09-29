@@ -1,0 +1,20 @@
+{
+    "ring": "Z/5^4",
+    "p": 5,
+    "n": 4,
+    "weights": [
+        1,
+        51
+    ],
+    "started": "2026-09-29T01:21:42.956Z",
+    "wall_seconds": 58.5,
+    "peak_memory_gib": 6.1,
+    "threads": 8,
+    "syntomic_version": "0.1.0-DEV",
+    "syntomic_commit": "b855a08157d834d3a324865dfc3953a69777eb0c",
+    "nemo_version": "0.56.1",
+    "julia_version": "1.12.7",
+    "cpu": "Apple M2 Max",
+    "memory_gib": 64,
+    "os": "Darwin aarch64"
+}
