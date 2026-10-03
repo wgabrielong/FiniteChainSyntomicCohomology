@@ -2,11 +2,12 @@ cff-version: 1.2.0
 message: >-
   If you use these tables, please cite them and the work of Antieau, Krause and Nikolaus on
   which the computation rests.
-title: "FiniteChainSyntomicCohomology: p-adic K-groups of Z/p^n in degrees up to 100"
+title: "FiniteChainSyntomicCohomology: p-adic K-groups of finite chain rings in degrees up to 100"
 abstract: >-
-  The p-adic K-groups K_r(Z/p^n; Z_p), 1 <= r <= 100, of the 19 rings Z/p^n tabulated in
-  Appendix A of Antieau, Krause and Nikolaus, On the K-theory of Z/p^n, computed with
-  Syntomic.jl, with the groups that are new relative to that appendix marked.
+  The p-adic K-groups K_r(R; Z_p), 1 <= r <= 100, of finite chain rings R = O_K/pi^n, computed
+  with Syntomic.jl: the 19 rings Z/p^n tabulated in Appendix A of Antieau, Krause and Nikolaus,
+  On the K-theory of Z/p^n, and the 28 rings O_K/pi^n, 2 <= n <= 5, of the seven quadratic
+  extensions K of Q_2. The groups that are new relative to that appendix are marked.
 type: dataset
 authors:
   - family-names: Ong
@@ -17,6 +18,7 @@ keywords:
   - algebraic K-theory
   - syntomic cohomology
   - finite chain rings
+  - p-adic fields
 references:
   - type: article
     title: "On the K-theory of Z/p^n"

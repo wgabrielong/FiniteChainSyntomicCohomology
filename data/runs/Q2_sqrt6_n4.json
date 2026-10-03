@@ -1,0 +1,19 @@
+{
+    "ring": "O_K/pi^4, K = Q_2(sqrt(6))",
+    "id": "Q2_sqrt6_n4",
+    "weights": [
+        1,
+        51
+    ],
+    "started": "2026-10-03T13:05:44.702Z",
+    "wall_seconds": 78.3,
+    "peak_memory_gib": 6,
+    "threads": 8,
+    "syntomic_version": "0.1.0-DEV",
+    "syntomic_commit": "b855a08157d834d3a324865dfc3953a69777eb0c",
+    "nemo_version": "0.56.1",
+    "julia_version": "1.12.7",
+    "cpu": "Apple M2 Max",
+    "memory_gib": 64,
+    "os": "Darwin aarch64"
+}

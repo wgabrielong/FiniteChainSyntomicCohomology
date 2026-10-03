@@ -8,7 +8,7 @@ The table of [AKN, §A.3, p. 63] covers K_1–K_87 for this ring. It prints 37 g
 
 New groups are in **bold**. The last column gives the status in [AKN]: *printed*, *x* (marked x, not computed within 48 hours) or *beyond* (after the last row of the table).
 
-| r | K_r(Z/5⁶; Z₅) | order | [AKN] |
+| r | K_r(Z/5⁶; Z₅) | order | status |
 |--:|:--|:--|:--|
 | 1 | 5 | 5⁵ | printed |
 | 2 | 0 | 1 | printed |

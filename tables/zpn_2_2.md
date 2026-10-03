@@ -8,7 +8,7 @@ The table of [AKN, §A.1, p. 61] covers K_1–K_59 for this ring. Its 59 groups 
 
 New groups are in **bold**. The last column gives the status in [AKN]: *printed*, *x* (marked x, not computed within 48 hours) or *beyond* (after the last row of the table).
 
-| r | K_r(Z/2²; Z₂) | order | [AKN] |
+| r | K_r(Z/2²; Z₂) | order | status |
 |--:|:--|:--|:--|
 | 1 | 1 | 2¹ | printed |
 | 2 | 1 | 2¹ | printed |
