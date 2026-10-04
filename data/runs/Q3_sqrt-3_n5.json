@@ -1,0 +1,19 @@
+{
+    "ring": "O_K/pi^5, K = Q_3(sqrt(-3))",
+    "id": "Q3_sqrt-3_n5",
+    "weights": [
+        1,
+        51
+    ],
+    "started": "2026-10-04T16:55:51.770Z",
+    "wall_seconds": 169.1,
+    "peak_memory_gib": 7.4,
+    "threads": 8,
+    "syntomic_version": "0.1.0-DEV",
+    "syntomic_commit": "b855a08157d834d3a324865dfc3953a69777eb0c",
+    "nemo_version": "0.56.1",
+    "julia_version": "1.12.7",
+    "cpu": "Apple M2 Max",
+    "memory_gib": 64,
+    "os": "Darwin aarch64"
+}

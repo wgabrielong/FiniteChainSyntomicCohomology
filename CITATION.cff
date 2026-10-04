@@ -6,8 +6,9 @@ title: "FiniteChainSyntomicCohomology: p-adic K-groups of finite chain rings in 
 abstract: >-
   The p-adic K-groups K_r(R; Z_p), 1 <= r <= 100, of finite chain rings R = O_K/pi^n, computed
   with Syntomic.jl: the 19 rings Z/p^n tabulated in Appendix A of Antieau, Krause and Nikolaus,
-  On the K-theory of Z/p^n, and the 28 rings O_K/pi^n, 2 <= n <= 5, of the seven quadratic
-  extensions K of Q_2. The groups that are new relative to that appendix are marked.
+  On the K-theory of Z/p^n, and the 64 rings O_K/pi^n, 2 <= n <= 5, of the 16 quadratic
+  extensions K of Q_2, Q_3, Q_5 and Q_7. The groups that are new relative to that appendix are
+  marked.
 type: dataset
 authors:
   - family-names: Ong

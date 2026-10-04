@@ -1,0 +1,118 @@
+# p-adic K-theory of O_K/ϖ², K = Q₃(√−3)
+
+[All rings](../README.md) · the same data: [`k_theory.json`](../data/k_theory.json), [`k_theory.csv`](../data/k_theory.csv)
+
+The p-adic K-groups K_r(R; Z₃) for 1 ≤ r ≤ 100. As in [AKN, Appendix A], each entry lists the exponents a₁ ≤ a₂ ≤ … of the decomposition K_r(R; Z₃) ≅ Z/3^a₁ ⊕ Z/3^a₂ ⊕ …, and `0` is the zero group (a blank cell in [AKN]). K_0(R; Z₃) = Z₃.
+
+K = Q₃(√−3) is ramified over Q₃, with e = 2 and discriminant exponent 1 (LMFDB [3.1.2.1a1.1](https://www.lmfdb.org/padicField/3.1.2.1a1.1)). R = O_K/ϖ² = Z₃[z]/(E(z), z²) with E(z) = z² + 3, the defining polynomial of the LMFDB, and ϖ a root of E. |R| = 3².
+
+Since n ≤ e, R = F₃[z]/z². Hesselholt and Madsen computed the K-groups of these rings (cited in [AKN, §1.1, p. 2]): K_{2i−1}(F_q[z]/zⁿ; Z_p) ≅ W_{ni}(F_q)/V_n W_i(F_q) and K_{2i−2}(F_q[z]/zⁿ; Z_p) = 0 for i ≥ 2. Every group below agrees with their formula, so none is new.
+
+O_K/ϖ² is the same ring for K = [Q₃(√3)](Q3_sqrt3_n2.md) (see the [coincidences](../README.md#coincidences)), so those tables equal this one.
+
+The last column gives the status: *Hesselholt–Madsen*.
+
+| r | K_r(R; Z₃) | order | status |
+|--:|:--|:--|:--|
+| 1 | 1 | 3¹ | Hesselholt–Madsen |
+| 2 | 0 | 1 | Hesselholt–Madsen |
+| 3 | 2 | 3² | Hesselholt–Madsen |
+| 4 | 0 | 1 | Hesselholt–Madsen |
+| 5 | 1,2 | 3³ | Hesselholt–Madsen |
+| 6 | 0 | 1 | Hesselholt–Madsen |
+| 7 | 1,1,2 | 3⁴ | Hesselholt–Madsen |
+| 8 | 0 | 1 | Hesselholt–Madsen |
+| 9 | 1,1,3 | 3⁵ | Hesselholt–Madsen |
+| 10 | 0 | 1 | Hesselholt–Madsen |
+| 11 | 1,1,1,3 | 3⁶ | Hesselholt–Madsen |
+| 12 | 0 | 1 | Hesselholt–Madsen |
+| 13 | 1,1,1,1,3 | 3⁷ | Hesselholt–Madsen |
+| 14 | 0 | 1 | Hesselholt–Madsen |
+| 15 | 1,1,1,2,3 | 3⁸ | Hesselholt–Madsen |
+| 16 | 0 | 1 | Hesselholt–Madsen |
+| 17 | 1,1,1,1,2,3 | 3⁹ | Hesselholt–Madsen |
+| 18 | 0 | 1 | Hesselholt–Madsen |
+| 19 | 1,1,1,1,1,2,3 | 3¹⁰ | Hesselholt–Madsen |
+| 20 | 0 | 1 | Hesselholt–Madsen |
+| 21 | 1,1,1,1,2,2,3 | 3¹¹ | Hesselholt–Madsen |
+| 22 | 0 | 1 | Hesselholt–Madsen |
+| 23 | 1,1,1,1,1,2,2,3 | 3¹² | Hesselholt–Madsen |
+| 24 | 0 | 1 | Hesselholt–Madsen |
+| 25 | 1,1,1,1,1,1,2,2,3 | 3¹³ | Hesselholt–Madsen |
+| 26 | 0 | 1 | Hesselholt–Madsen |
+| 27 | 1,1,1,1,1,1,2,2,4 | 3¹⁴ | Hesselholt–Madsen |
+| 28 | 0 | 1 | Hesselholt–Madsen |
+| 29 | 1,1,1,1,1,1,1,2,2,4 | 3¹⁵ | Hesselholt–Madsen |
+| 30 | 0 | 1 | Hesselholt–Madsen |
+| 31 | 1,1,1,1,1,1,1,1,2,2,4 | 3¹⁶ | Hesselholt–Madsen |
+| 32 | 0 | 1 | Hesselholt–Madsen |
+| 33 | 1,1,1,1,1,1,1,2,2,2,4 | 3¹⁷ | Hesselholt–Madsen |
+| 34 | 0 | 1 | Hesselholt–Madsen |
+| 35 | 1,1,1,1,1,1,1,1,2,2,2,4 | 3¹⁸ | Hesselholt–Madsen |
+| 36 | 0 | 1 | Hesselholt–Madsen |
+| 37 | 1,1,1,1,1,1,1,1,1,2,2,2,4 | 3¹⁹ | Hesselholt–Madsen |
+| 38 | 0 | 1 | Hesselholt–Madsen |
+| 39 | 1,1,1,1,1,1,1,1,2,2,2,2,4 | 3²⁰ | Hesselholt–Madsen |
+| 40 | 0 | 1 | Hesselholt–Madsen |
+| 41 | 1,1,1,1,1,1,1,1,1,2,2,2,2,4 | 3²¹ | Hesselholt–Madsen |
+| 42 | 0 | 1 | Hesselholt–Madsen |
+| 43 | 1,1,1,1,1,1,1,1,1,1,2,2,2,2,4 | 3²² | Hesselholt–Madsen |
+| 44 | 0 | 1 | Hesselholt–Madsen |
+| 45 | 1,1,1,1,1,1,1,1,1,1,2,2,2,3,4 | 3²³ | Hesselholt–Madsen |
+| 46 | 0 | 1 | Hesselholt–Madsen |
+| 47 | 1,1,1,1,1,1,1,1,1,1,1,2,2,2,3,4 | 3²⁴ | Hesselholt–Madsen |
+| 48 | 0 | 1 | Hesselholt–Madsen |
+| 49 | 1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,3,4 | 3²⁵ | Hesselholt–Madsen |
+| 50 | 0 | 1 | Hesselholt–Madsen |
+| 51 | 1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,4 | 3²⁶ | Hesselholt–Madsen |
+| 52 | 0 | 1 | Hesselholt–Madsen |
+| 53 | 1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,4 | 3²⁷ | Hesselholt–Madsen |
+| 54 | 0 | 1 | Hesselholt–Madsen |
+| 55 | 1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,4 | 3²⁸ | Hesselholt–Madsen |
+| 56 | 0 | 1 | Hesselholt–Madsen |
+| 57 | 1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,3,4 | 3²⁹ | Hesselholt–Madsen |
+| 58 | 0 | 1 | Hesselholt–Madsen |
+| 59 | 1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,3,4 | 3³⁰ | Hesselholt–Madsen |
+| 60 | 0 | 1 | Hesselholt–Madsen |
+| 61 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,3,4 | 3³¹ | Hesselholt–Madsen |
+| 62 | 0 | 1 | Hesselholt–Madsen |
+| 63 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4 | 3³² | Hesselholt–Madsen |
+| 64 | 0 | 1 | Hesselholt–Madsen |
+| 65 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4 | 3³³ | Hesselholt–Madsen |
+| 66 | 0 | 1 | Hesselholt–Madsen |
+| 67 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,4 | 3³⁴ | Hesselholt–Madsen |
+| 68 | 0 | 1 | Hesselholt–Madsen |
+| 69 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,3,3,4 | 3³⁵ | Hesselholt–Madsen |
+| 70 | 0 | 1 | Hesselholt–Madsen |
+| 71 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,3,3,4 | 3³⁶ | Hesselholt–Madsen |
+| 72 | 0 | 1 | Hesselholt–Madsen |
+| 73 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,3,3,4 | 3³⁷ | Hesselholt–Madsen |
+| 74 | 0 | 1 | Hesselholt–Madsen |
+| 75 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,4 | 3³⁸ | Hesselholt–Madsen |
+| 76 | 0 | 1 | Hesselholt–Madsen |
+| 77 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,4 | 3³⁹ | Hesselholt–Madsen |
+| 78 | 0 | 1 | Hesselholt–Madsen |
+| 79 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,4 | 3⁴⁰ | Hesselholt–Madsen |
+| 80 | 0 | 1 | Hesselholt–Madsen |
+| 81 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,5 | 3⁴¹ | Hesselholt–Madsen |
+| 82 | 0 | 1 | Hesselholt–Madsen |
+| 83 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,5 | 3⁴² | Hesselholt–Madsen |
+| 84 | 0 | 1 | Hesselholt–Madsen |
+| 85 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,5 | 3⁴³ | Hesselholt–Madsen |
+| 86 | 0 | 1 | Hesselholt–Madsen |
+| 87 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,5 | 3⁴⁴ | Hesselholt–Madsen |
+| 88 | 0 | 1 | Hesselholt–Madsen |
+| 89 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,5 | 3⁴⁵ | Hesselholt–Madsen |
+| 90 | 0 | 1 | Hesselholt–Madsen |
+| 91 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,5 | 3⁴⁶ | Hesselholt–Madsen |
+| 92 | 0 | 1 | Hesselholt–Madsen |
+| 93 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,3,3,5 | 3⁴⁷ | Hesselholt–Madsen |
+| 94 | 0 | 1 | Hesselholt–Madsen |
+| 95 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,3,3,5 | 3⁴⁸ | Hesselholt–Madsen |
+| 96 | 0 | 1 | Hesselholt–Madsen |
+| 97 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,3,3,5 | 3⁴⁹ | Hesselholt–Madsen |
+| 98 | 0 | 1 | Hesselholt–Madsen |
+| 99 | 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,5 | 3⁵⁰ | Hesselholt–Madsen |
+| 100 | 0 | 1 | Hesselholt–Madsen |
+
+Computed with [Syntomic.jl](https://github.com/wgabrielong/Syntomic.jl) (commit `b855a08`) in 3.4 s on 8 threads of an Apple M2 Max, peak memory 1.2 GiB. The cohomology of every weight and its working precision are in [`data/cohomology/Q3_sqrt-3_n2.json`](../data/cohomology/Q3_sqrt-3_n2.json).
