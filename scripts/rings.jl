@@ -4,11 +4,12 @@
 # finite_chain_ring(p, htilde, E, n): `htilde` lists the coefficients of h̃ from low to high
 # degree, and E[k+1] the coordinates of the coefficient of z^k in the basis 1, x, …, x^(f-1).
 #
-# The quadratic extensions of Q_2 are those of the LMFDB, each presented by its LMFDB defining
-# polynomial: h̃ for the unramified field (with E = z + 2), E itself for the ramified ones.
+# The quadratic and cubic extensions of Q_p, p ≤ 7, are those of the LMFDB, each presented
+# by its LMFDB defining polynomial: h̃ for the unramified field (with E = z + p), E itself
+# for the ramified ones.
 
 struct Field
-    key::String          # in the names of the files: "sqrt-1"
+    key::String          # in the names of the files: "sqrt-1", "cbrt2"
     name::String         # "Q₂(√−1)"
     ascii::String        # "Q_2(sqrt(-1))"
     alias::String        # the same field with another square root ("" if none is used)
@@ -25,7 +26,7 @@ end
 
 struct Ring
     id::String           # the name of its files
-    family::Symbol       # :akn (the rings of [AKN, Appendix A]) or :quadratic
+    family::Symbol       # :akn (the rings of [AKN, Appendix A]), :quadratic or :cubic
     field::Field
     n::Int
 end
@@ -60,13 +61,15 @@ end
 # p = 5; for p = 2 the classes are those of ±1, ±2, ±3, ±6 (-5 = 3 and -10 = 6 up to squares,
 # since -15 ≡ 1 mod 8).
 function unramified(p, key, name, ascii, lmfdb, poly, htilde)
-    return Field(
-        key, name, ascii, "", lmfdb, "", poly, p, 2, 1, 0, htilde, [[p, 0], [1, 0]]
-    )
+    f = length(htilde) - 1
+    E = [[p; zeros(Int, f - 1)], [1; zeros(Int, f - 1)]]
+    return Field(key, name, ascii, "", lmfdb, "", poly, p, f, 1, 0, htilde, E)
 end
 
 function ramified(p, key, name, ascii, alias, lmfdb, poly, c, E)
-    return Field(key, name, ascii, alias, lmfdb, "", poly, p, 1, 2, c, [0, 1], E)
+    return Field(
+        key, name, ascii, alias, lmfdb, "", poly, p, 1, length(E) - 1, c, [0, 1], E
+    )
 end
 
 const QUADRATIC_FIELDS = [
@@ -222,6 +225,151 @@ const QUADRATIC_FIELDS = [
     ),
 ]
 
+# The cubic extensions of Q_p for p ≤ 7, as in the LMFDB (p-adic fields of degree 3),
+# presented in the same way. The unramified one is Q_p(ζ_m) for the least m such that p has
+# order 3 modulo m. A ramified field whose polynomial is x^3 + a is Q_p(∛a), since -1 is a
+# cube. The other names say that the field contains a root of x^3 - a, or of x^3 - 3x + 1
+# for Q₃(ζ₉)⁺ = Q₃(ζ₉ + ζ₉⁻¹); `check_name` in scripts/build.jl finds that root. The four
+# remaining fields of Q₃ have no such name and are written Q₃[x]/(polynomial); their keys
+# are their LMFDB labels.
+function polyfield(p, lmfdb, poly, c, E)
+    name = "Q$(sub(p))[x]/($(replace(poly, r"\^(\d+)" => m -> sup(m[2:end]))))"
+    return ramified(p, lmfdb, name, "Q_$p[x]/($poly)", "", lmfdb, poly, c, E)
+end
+
+const CUBIC_FIELDS = [
+    # Q_2: x a primitive 7th root of unity; x^3 = -2
+    unramified(
+        2, "zeta7", "Q₂(ζ₇)", "Q_2(zeta_7)", "2.3.1.0a1.1", "x^3 + x + 1", [1, 1, 0, 1]
+    ),
+    ramified(
+        2,
+        "cbrt2",
+        "Q₂(∛2)",
+        "Q_2(cbrt(2))",
+        "",
+        "2.1.3.2a1.1",
+        "x^3 + 2",
+        2,
+        [[2], [0], [0], [1]],
+    ),
+    # Q_3: x a primitive 13th root of unity, and the nine ramified fields
+    unramified(
+        3, "zeta13", "Q₃(ζ₁₃)", "Q_3(zeta_13)", "3.3.1.0a1.1", "x^3 + 2x + 1", [1, 2, 0, 1]
+    ),
+    ramified(
+        3,
+        "cbrt2",
+        "Q₃(∛2)",
+        "Q_3(cbrt(2))",
+        "",
+        "3.1.3.3a1.1",
+        "x^3 + 3x + 3",
+        3,
+        [[3], [3], [0], [1]],
+    ),
+    polyfield(3, "3.1.3.3a1.2", "x^3 + 6x + 3", 3, [[3], [6], [0], [1]]),
+    polyfield(3, "3.1.3.4a1.1", "x^3 + 3x^2 + 3", 4, [[3], [0], [3], [1]]),
+    ramified(
+        3,
+        "zeta9plus",
+        "Q₃(ζ₉)⁺",
+        "Q_3(zeta_9)^+",
+        "",
+        "3.1.3.4a2.1",
+        "x^3 + 6x^2 + 3",
+        4,
+        [[3], [0], [6], [1]],
+    ),
+    polyfield(3, "3.1.3.4a2.2", "x^3 + 6x^2 + 12", 4, [[12], [0], [6], [1]]),
+    polyfield(3, "3.1.3.4a2.3", "x^3 + 6x^2 + 21", 4, [[21], [0], [6], [1]]),
+    ramified(
+        3,
+        "cbrt3",
+        "Q₃(∛3)",
+        "Q_3(cbrt(3))",
+        "",
+        "3.1.3.5a1.1",
+        "x^3 + 3",
+        5,
+        [[3], [0], [0], [1]],
+    ),
+    ramified(
+        3,
+        "cbrt12",
+        "Q₃(∛12)",
+        "Q_3(cbrt(12))",
+        "",
+        "3.1.3.5a1.2",
+        "x^3 + 9x + 3",
+        5,
+        [[3], [9], [0], [1]],
+    ),
+    ramified(
+        3,
+        "cbrt6",
+        "Q₃(∛6)",
+        "Q_3(cbrt(6))",
+        "",
+        "3.1.3.5a1.3",
+        "x^3 + 18x + 3",
+        5,
+        [[3], [18], [0], [1]],
+    ),
+    # Q_5: x a primitive 31st root of unity; x^3 = -5
+    unramified(
+        5, "zeta31", "Q₅(ζ₃₁)", "Q_5(zeta_31)", "5.3.1.0a1.1", "x^3 + 3x + 3", [3, 3, 0, 1]
+    ),
+    ramified(
+        5,
+        "cbrt5",
+        "Q₅(∛5)",
+        "Q_5(cbrt(5))",
+        "",
+        "5.1.3.2a1.1",
+        "x^3 + 5",
+        2,
+        [[5], [0], [0], [1]],
+    ),
+    # Q_7: x a primitive 9th root of unity; x^3 = -7, -14, -21
+    unramified(
+        7, "zeta9", "Q₇(ζ₉)", "Q_7(zeta_9)", "7.3.1.0a1.1", "x^3 + 6x^2 + 4", [4, 0, 6, 1]
+    ),
+    ramified(
+        7,
+        "cbrt7",
+        "Q₇(∛7)",
+        "Q_7(cbrt(7))",
+        "",
+        "7.1.3.2a1.1",
+        "x^3 + 7",
+        2,
+        [[7], [0], [0], [1]],
+    ),
+    ramified(
+        7,
+        "cbrt14",
+        "Q₇(∛14)",
+        "Q_7(cbrt(14))",
+        "",
+        "7.1.3.2a1.2",
+        "x^3 + 14",
+        2,
+        [[14], [0], [0], [1]],
+    ),
+    ramified(
+        7,
+        "cbrt21",
+        "Q₇(∛21)",
+        "Q_7(cbrt(21))",
+        "",
+        "7.1.3.2a1.3",
+        "x^3 + 21",
+        2,
+        [[21], [0], [0], [1]],
+    ),
+]
+
 const AKN_RINGS = [
     Ring("zpn_$(p)_$(n)", :akn, qp(p), n) for
     (p, ns) in ((2, 2:5), (3, 2:5), (5, 2:6), (7, 2:7)) for n in ns
@@ -231,7 +379,11 @@ const QUADRATIC_RINGS = [
     Ring("Q$(K.p)_$(K.key)_n$n", :quadratic, K, n) for K in QUADRATIC_FIELDS for n in 2:5
 ]
 
-const RINGS = vcat(AKN_RINGS, QUADRATIC_RINGS)
+const CUBIC_RINGS = [
+    Ring("Q$(K.p)_$(K.key)_n$n", :cubic, K, n) for K in CUBIC_FIELDS for n in 2:5
+]
+
+const RINGS = vcat(AKN_RINGS, QUADRATIC_RINGS, CUBIC_RINGS)
 
 function ring_by_id(id::AbstractString)
     k = findfirst(R -> R.id == id, RINGS)

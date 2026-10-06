@@ -1,0 +1,19 @@
+{
+    "ring": "O_K/pi^4, K = Q_3[x]/(x^3 + 3x^2 + 3)",
+    "id": "Q3_3.1.3.4a1.1_n4",
+    "weights": [
+        1,
+        51
+    ],
+    "started": "2026-10-06T12:53:20.126Z",
+    "wall_seconds": 63.8,
+    "peak_memory_gib": 5.7,
+    "threads": 8,
+    "syntomic_version": "0.1.0-DEV",
+    "syntomic_commit": "b855a08157d834d3a324865dfc3953a69777eb0c",
+    "nemo_version": "0.56.1",
+    "julia_version": "1.12.7",
+    "cpu": "Apple M2 Max",
+    "memory_gib": 64,
+    "os": "Darwin aarch64"
+}

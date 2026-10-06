@@ -8,7 +8,7 @@ K = Q₇(√−7) is ramified over Q₇, with e = 2 and discriminant exponent 1 
 
 Since n ≤ e, R = F₇[z]/z². Hesselholt and Madsen computed the K-groups of these rings (cited in [AKN, §1.1, p. 2]): K_{2i−1}(F_q[z]/zⁿ; Z_p) ≅ W_{ni}(F_q)/V_n W_i(F_q) and K_{2i−2}(F_q[z]/zⁿ; Z_p) = 0 for i ≥ 2. Every group below agrees with their formula, so none is new.
 
-O_K/ϖ² is the same ring for K = [Q₇(√7)](Q7_sqrt7_n2.md) (see the [coincidences](../README.md#coincidences)), so those tables equal this one.
+O_K/ϖ² is the same ring for K = [Q₇(√7)](Q7_sqrt7_n2.md), [Q₇(∛7)](Q7_cbrt7_n2.md), [Q₇(∛14)](Q7_cbrt14_n2.md), [Q₇(∛21)](Q7_cbrt21_n2.md) (see the [coincidences](../docs/coincidences.md#across-the-families)), so those tables equal this one.
 
 The last column gives the status: *Hesselholt–Madsen*.
 

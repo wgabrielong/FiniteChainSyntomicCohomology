@@ -6,7 +6,7 @@ The p-adic K-groups K_r(R; Z₂) for 1 ≤ r ≤ 100. As in [AKN, Appendix A], e
 
 K = Q₂(√3) = Q₂(√−5) is ramified over Q₂, with e = 2 and discriminant exponent 2 (LMFDB [2.1.2.2a1.2](https://www.lmfdb.org/padicField/2.1.2.2a1.2)). R = O_K/ϖ⁴ = Z₂[z]/(E(z), z⁴) with E(z) = z² + 2z + 6, the defining polynomial of the LMFDB, and ϖ a root of E. |R| = 2⁴.
 
-O_K/ϖ⁴ is the same ring for K = [Q₂(√−1)](Q2_sqrt-1_n4.md) (see the [coincidences](../README.md#coincidences)), so those tables equal this one.
+O_K/ϖ⁴ is the same ring for K = [Q₂(√−1)](Q2_sqrt-1_n4.md) (see the [coincidences](../docs/coincidences.md#among-the-quadratic-rings)), so those tables equal this one.
 
 [AKN] tabulate no ring of this kind, so all 100 groups are new relative to their tables. They are in **bold**.
 
